@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import *
+from django.views.generic import ListView, DetailView
+
 
 def product_list(request, category_slug=None):
     """отображения каталога списка товара """
@@ -19,7 +21,23 @@ def product_list(request, category_slug=None):
 #    return render(request, 'magazin/home.html', {'post': post})
 
 
+#def product_list(request):
+#    category = Category.objects.all()
+#    products = Product.objects.all()
+#    return render(request, 'magazin/product_list.html', {'category': category, 'products': products})
+
+class ProductList(ListView):
+    model = Product
+    template_name = 'magazin/product_list.html'
+
+    def get_queryset(self):
+        return Product.objects.filter()
+
+
+
+
+
 def product_detail(request, id, slug):
     """детальное отображение продукта"""
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
-    return render(request, '', {'product': product})
+    return render(request, 'magazin/product_detail.html', {'product': product})

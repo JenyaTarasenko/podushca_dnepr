@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>pillloMart</title>
+    <title>Подушка Днепр</title>
     <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -34,7 +34,7 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                        <a class="navbar-brand" href="{% url 'home' %}"> <img src="media/products/logo1.png" alt="logo"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -44,30 +44,28 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Home</a>
+                                    <a class="nav-link" href="/">Главная</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="about.html">about</a>
+                                    <a class="nav-link" href="about.html">О нас</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        product
+                                        Товары
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                        <a class="dropdown-item" href="product_list.html"> product list</a>
-                                        <a class="dropdown-item" href="single-product.html">product details</a>
-
+                                        <a class="dropdown-item" href="{% url 'product_list_by_category' %}">Перечень товаров</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        pages
+                                        Страницы
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
                                         <a class="dropdown-item" href="login.html">
-                                            login
+                                            Логин
 
                                         </a>
                                         <a class="dropdown-item" href="checkout.html">product checkout</a>
@@ -80,16 +78,16 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_2"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        blog
+                                        Блог
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="blog.html"> blog</a>
-                                        <a class="dropdown-item" href="single-blog.html">Single blog</a>
+                                        <a class="dropdown-item" href="blog.html">Блог</a>
+                                        <a class="dropdown-item" href="single-blog.html">Наш блог</a>
                                     </div>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
+                                    <a class="nav-link" href="contact.html">Контакты</a>
                                 </li>
                             </ul>
                         </div>
@@ -250,54 +248,72 @@
     <!-- trending item end-->
 
     <!-- client review part here -->
-    <section class="client_review">
+
+    <!-- client review part end -->
+
+
+    <!-- feature part here -->
+
+    <!-- feature part end -->
+
+    <!-- subscribe part here -->
+    <section class="subscribe_part section_padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="client_review_slider owl-carousel">
-                        <div class="single_client_review">
-                            <div class="client_img">
-                                <img src="img/client.png" alt="#">
-                            </div>
-                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                            <h5>- Micky Mouse</h5>
-                        </div>
-                        <div class="single_client_review">
-                            <div class="client_img">
-                                <img src="img/client_1.png" alt="#">
-                            </div>
-                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                            <h5>- Micky Mouse</h5>
-                        </div>
-                        <div class="single_client_review">
-                            <div class="client_img">
-                                <img src="img/client_2.png" alt="#">
-                            </div>
-                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                            <h5>- Micky Mouse</h5>
+                    <div class="subscribe_part_content">
+                        <h2>Get promotions & updates!</h2>
+                        <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources credibly innovate granular internal .</p>
+                        <div class="subscribe_form">
+                            <input type="email" placeholder="Enter your mail">
+                            <a href="#" class="btn_1">Subscribe</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- client review part end -->
+    <!-- subscribe part end -->
+{% endblock content %}
+      <section class="client_review">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="client_review_slider owl-carousel">
+                        <div class="single_client_review">
+                            <div class="client_img">
+                                <img src="media/products/client_1.png" alt="#">
+                            </div>
+                            <p>"Работаю с магазином очень долго хорошие ребята</p>
+                            <h5>Женя</h5>
+                        </div>
+                        <div class="single_client_review">
+                            <div class="client_img">
+                                <img src="media/products/client_2.png" alt="#">
+                            </div>
+                            <p>"Хороший магазин низкие цены.</p>
+                            <h5>Артем</h5>
+                        </div>
 
-
-    <!-- feature part here -->
-    <section class="feature_part section_padding">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <section class="feature_part section_padding">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-6">
                     <div class="feature_part_tittle">
-                        <h3>Credibly innovate granular
-                        internal or organic sources
-                        whereas standards.</h3>
+                        <h3>Текстильный магазин подушки и одеяла город Днепр.</h3>
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="feature_part_content">
-                        <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness.</p>
+                        <p>Домашний текстиль давно уже стал неотъемлемой частью быта любого человека. Эти аксессуары домашнего хозяйства по-прежнему выполняют не только функцию предметов обихода повседневной жизни, но и являются частью интерьера практически любого жилища.
+Невозможно уже представить квартиру или дом без штор и гардин на окнах, которые привносят уют и покой, а красивое постельное белье всегда ассоциируется со спокойным сном. В различные времена мода диктовала свои условия по-разному и каждый раз по-новому воплощала свои идеи в тканях, в их причудливых формах и цветах.
+Наш домашний текстиль поможет Вам создать комфортную атмосферу в собственном доме, учитывая Ваши потребности, вкусы и эстетические предпочтения. Как важно подобрать необходимые цвет и форму штор, чтобы они позитивно влияли на Ваше настроение, а, выбирая правильно матрац для кровати, Вы подарите себе часы безмятежного отдыха. Покупая и выбирая текстиль для дома у нас, Вы сможете создать свою неповторимую, особо благоприятную домашнюю среду для себя и своих близких.
+Наш магазин готов предложить Вам огромный выбор товаров категории "Домашний текстиль". Каждый предмет, выбранный Вами из нашего каталога, обладает высоким качеством и долго прослужит Вам..</p>
                     </div>
                 </div>
             </div>
@@ -329,27 +345,6 @@
             </div>
         </div>
     </section>
-    <!-- feature part end -->
-
-    <!-- subscribe part here -->
-    <section class="subscribe_part section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="subscribe_part_content">
-                        <h2>Get promotions & updates!</h2>
-                        <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources credibly innovate granular internal .</p>
-                        <div class="subscribe_form">
-                            <input type="email" placeholder="Enter your mail">
-                            <a href="#" class="btn_1">Subscribe</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- subscribe part end -->
-{% endblock content %}
     <!--::footer_part start::-->
     <footer class="footer_part">
         <div class="footer_iner">
@@ -358,15 +353,14 @@
                     <div class="col-lg-8">
                         <div class="footer_menu">
                             <div class="footer_logo">
-                                <a href="index.html"><img src="img/logo.png" alt="#"></a>
+                                <a href="{% url 'home' %}"><img src="media/products/logo1.png" alt="logo"></a>
                             </div>
                             <div class="footer_menu_item">
-                                <a href="index.html">Home</a>
-                                <a href="about.html">About</a>
-                                <a href="product_list.html">Products</a>
-                                <a href="#">Pages</a>
-                                <a href="blog.html">Blog</a>
-                                <a href="contact.html">Contact</a>
+                                <a href="{% url 'home' %}">Главная</a>
+                                <a href="about.html">О нас</a>
+                                <a href="{% url 'product_list_by_category' %}">Товары</a>
+                                <a href="blog.html">Блог</a>
+                                <a href="contact.html">Контакты</a>
                             </div>
                         </div>
                     </div>
